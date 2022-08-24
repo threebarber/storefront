@@ -1,5 +1,5 @@
 .container {  display: grid;
-    grid-template-columns: 0.4fr 1.4fr;
+    grid-template-columns: 0.2fr 1.6fr;
     grid-template-rows: 0.3fr 1.7fr;
     gap: 0px 0px;
     grid-auto-flow: row;
@@ -7,8 +7,8 @@
       "header header"
       "sidebar store";
 
-    margin-left:100px;
-    margin-right:100px;
+    margin-left:70px;
+    margin-right:70px;
     
     border:dashed black;
   }
@@ -32,4 +32,14 @@
 
   .productDiv {
     border:dashed red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+
+  *{
+    Font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif
   }
