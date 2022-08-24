@@ -29,3 +29,7 @@
     grid-area: store;
   }
   
+
+  .productDiv {
+    border:dashed red;
+  }

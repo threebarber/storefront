@@ -1,6 +1,6 @@
 const date = new Date();
-
 const productList = [];
+const storeDiv = document.querySelector(".store");
 
 const product = function (id, title, price, description, category, image, rating) {
     /*this.sayHello = () => console.log('hello!');*/
@@ -30,13 +30,30 @@ const utils = (() => {
                 let newProd = new product(p.id, p.title, p.price, p.description, p.category, p.image, p.rating);
                 productList.push(newProd);
                 utils.log(`Added product ${newProd.title} to list - current products ${productList.length}`);
-            });
+            })
+        }).then(function() {
+            utils.displayProducts(productList);
         });
 
     }
 
     const displayProducts = function (prodList) {
 
+        prodList.forEach(prod => {
+
+            utils.log(`Displaying ${prod.title}`);
+
+            var prodDiv = document.createElement("div");
+            prodDiv.classList.add("productDiv");
+
+            var prodTitleElem = document.createElement("h4");
+            prodTitleElem.innerText = prod.title;
+
+            prodDiv.appendChild(prodTitleElem);
+            storeDiv.appendChild(prodDiv)
+
+
+        });
     }
 
 
@@ -47,15 +64,14 @@ const utils = (() => {
         log,
         retrieveProducts
     };
-    
+
 })();
 
 
 utils.retrieveProducts();
 
 
-
-const loopTime = 10;
+/*const loopTime = 10;
 
 for (let i = 0; i < loopTime; i++) {
     const storeDiv = document.querySelector(".store");
@@ -68,7 +84,7 @@ for (let i = 0; i < loopTime; i++) {
 
 }
 
-
+*/
 
 
 
