@@ -20,7 +20,7 @@
   .store {  display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    gap: 0px 0px;
+    gap: 10px 10px;
     grid-auto-flow: row;
     grid-template-areas:
       ". . . ."
@@ -36,6 +36,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    cursor:pointer;
+  }
+
+  .productDiv img{
+    max-height: 128px;
+    max-width: 128px;
   }
 
 

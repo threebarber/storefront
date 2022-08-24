@@ -46,9 +46,14 @@ const utils = (() => {
             var prodDiv = document.createElement("div");
             prodDiv.classList.add("productDiv");
 
+
+            var prodImgElement = document.createElement("img");
+            prodImgElement.src = prod.image;
+
             var prodTitleElem = document.createElement("h4");
             prodTitleElem.innerText = prod.title;
 
+            prodDiv.appendChild(prodImgElement);
             prodDiv.appendChild(prodTitleElem);
             storeDiv.appendChild(prodDiv)
 
