@@ -49,6 +49,20 @@
     background-position-y: center;
   }
 
+  .productDiv  h4{
+    text-align: center;
+    font-weight: 900;
+  }
+
+  .productDiv p{
+
+    font-weight: 100;
+    font-family: Lato,sans-serif;
+    letter-spacing: .1em;
+    color:#333;
+  }
+  
+
 
   *{
     Font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;

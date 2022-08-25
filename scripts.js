@@ -51,16 +51,18 @@ const utils = (() => {
             prodImgDiv.classList.add("productImageDiv");
             prodImgDiv.style.backgroundImage = `url('${prod.image}')`
 
-           /* var prodImgElement = document.createElement("img");
-            prodImgElement.src = prod.image;*/
-
             var prodTitleElem = document.createElement("h4");
             prodTitleElem.innerText = prod.title;
+
+
+            var prodPriceElem = document.createElement("p");
+            prodPriceElem.innerText = `$${prod.price}`
 
             /*prodImgDiv.appendChild(prodImgElement);*/
 
             prodDiv.appendChild(prodImgDiv);
             prodDiv.appendChild(prodTitleElem);
+            prodDiv.appendChild(prodPriceElem);
             storeDiv.appendChild(prodDiv)
 
 
