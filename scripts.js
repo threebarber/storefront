@@ -47,13 +47,19 @@ const utils = (() => {
             prodDiv.classList.add("productDiv");
 
 
-            var prodImgElement = document.createElement("img");
-            prodImgElement.src = prod.image;
+            var prodImgDiv = document.createElement("div");
+            prodImgDiv.classList.add("productImageDiv");
+            prodImgDiv.style.backgroundImage = `url('${prod.image}')`
+
+           /* var prodImgElement = document.createElement("img");
+            prodImgElement.src = prod.image;*/
 
             var prodTitleElem = document.createElement("h4");
             prodTitleElem.innerText = prod.title;
 
-            prodDiv.appendChild(prodImgElement);
+            /*prodImgDiv.appendChild(prodImgElement);*/
+
+            prodDiv.appendChild(prodImgDiv);
             prodDiv.appendChild(prodTitleElem);
             storeDiv.appendChild(prodDiv)
 

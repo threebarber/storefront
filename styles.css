@@ -34,18 +34,23 @@
     border:dashed red;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     cursor:pointer;
   }
 
-  .productDiv img{
-    max-height: 128px;
-    max-width: 128px;
+  .productImageDiv{
+    width:250px;
+    height:250px;
+    border:dashed green;
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    background-position-x: center; 
+    background-position-y: center;
   }
 
 
-
   *{
-    Font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif
+    Font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;
+    box-sizing: border-box;
   }
