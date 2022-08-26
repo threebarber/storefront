@@ -133,6 +133,17 @@ const utils = (() => {
         modaltextPrice.innerText = `$${prod.price}`
 
 
+        var prodRatingDiv = document.createElement("div");
+            prodRatingDiv.classList.add("productRatingDiv")
+
+            let i = 0;
+
+            while (i <= prod.rating) {
+                prodRatingDiv.innerHTML+=(`<span class="fa fa-star"></span>`)
+                i++;
+              }
+
+
         var modalTextDescription = document.createElement("h3");
         modalTextDescription.innerText = prod.description;
 
@@ -151,6 +162,7 @@ const utils = (() => {
 
         modalTextDiv.appendChild(modalTextTitle);
         modalTextDiv.appendChild(modaltextPrice);
+        modalTextDiv.appendChild(prodRatingDiv);
         modalTextDiv.appendChild(modalTextDescription);
 
 

@@ -142,10 +142,11 @@
 .modalTextDiv{
   display:flex;
   flex-direction: column;
+  align-items: center;
   padding-left: 40px;
   border:dashed blue;
-  width: 430px;
-  height: 430px;
+  width: 500px;
+  height: 500px;
 }
 
 .close {
