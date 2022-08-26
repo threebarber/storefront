@@ -70,6 +70,9 @@
   text-align: center;
 }
 
+.productOverlay span{
+  text-align: center;
+}
 
 .productOverlay {
   display: flex;
@@ -92,6 +95,11 @@
   background-color: whitesmoke;
   height:250px;
   width:250px;
+}
+
+.productRatingDiv {
+  display: flex;
+  justify-content: center;
 }
 
 

@@ -11,7 +11,7 @@ const product = function (id, title, price, description, category, image, rating
     this.description = description;
     this.category = category;
     this.image = image;
-    this.rating = rating;
+    this.rating = Math.round(rating);
 };
 
 
@@ -27,7 +27,7 @@ const utils = (() => {
             return response.json();
         }).then(function (data) {
             data.forEach(p => {
-                let newProd = new product(p.id, p.title, p.price, p.description, p.category, p.image, p.rating);
+                let newProd = new product(p.id, p.title, p.price, p.description, p.category, p.image, p["rating"]["rate"]);
                 productList.push(newProd);
                 utils.log(`Added product ${newProd.title} to list - current products ${productList.length}`);
             })
@@ -59,11 +59,27 @@ const utils = (() => {
             prodTitleElem.innerText = prod.title;
 
 
+
             var prodPriceElem = document.createElement("p");
             prodPriceElem.innerText = `$${prod.price}`
 
 
             prodOverlay.appendChild(prodTitleElem);
+
+
+            var prodRatingDiv = document.createElement("div");
+            prodRatingDiv.classList.add("productRatingDiv")
+
+            let i = 0;
+
+            while (i <= prod.rating) {
+                prodRatingDiv.innerHTML+=(`<span class="fa fa-star"></span>`)
+                i++;
+              }
+
+
+            prodOverlay.appendChild(prodRatingDiv);
+
             prodOverlay.appendChild(prodPriceElem);
 
             prodImgDiv.appendChild(prodOverlay);
