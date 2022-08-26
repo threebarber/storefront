@@ -47,9 +47,13 @@ const utils = (() => {
             prodDiv.classList.add("productDiv");
 
 
+            var prodOverlay = document.createElement("div");
+            prodOverlay.classList.add("productOverlay");
+
             var prodImgDiv = document.createElement("div");
             prodImgDiv.classList.add("productImageDiv");
             prodImgDiv.style.backgroundImage = `url('${prod.image}')`
+
 
             var prodTitleElem = document.createElement("h4");
             prodTitleElem.innerText = prod.title;
@@ -58,11 +62,17 @@ const utils = (() => {
             var prodPriceElem = document.createElement("p");
             prodPriceElem.innerText = `$${prod.price}`
 
+
+            prodOverlay.appendChild(prodPriceElem);
+            prodOverlay.appendChild(prodTitleElem);
+
+            prodImgDiv.appendChild(prodOverlay);
+
+
             /*prodImgDiv.appendChild(prodImgElement);*/
 
             prodDiv.appendChild(prodImgDiv);
-            prodDiv.appendChild(prodTitleElem);
-            prodDiv.appendChild(prodPriceElem);
+            
             storeDiv.appendChild(prodDiv)
 
 

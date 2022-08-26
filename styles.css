@@ -1,70 +1,99 @@
-.container {  display: grid;
-    grid-template-columns: 0.2fr 1.6fr;
-    grid-template-rows: 0.3fr 1.7fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      "header header"
-      "sidebar store";
+.container {
+  display: grid;
+  grid-template-columns: 0.2fr 1.6fr;
+  grid-template-rows: 0.3fr 1.7fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "header header"
+    "sidebar store";
 
-    margin-left:70px;
-    margin-right:70px;
-    
-    border:dashed black;
-  }
-  
-  .sidebar { grid-area: sidebar; }
-  
-  .header { grid-area: header; }
-  
-  .store {  display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 10px 10px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      ". . . ."
-      ". . . ."
-      ". . . .";
-    grid-area: store;
-  }
-  
+  margin-left: 70px;
+  margin-right: 70px;
 
-  .productDiv {
-    border:dashed red;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    cursor:pointer;
-  }
+  border: dashed black;
+}
 
-  .productImageDiv{
-    width:250px;
-    height:250px;
-    border:dashed green;
-    background-size: contain; 
-    background-repeat: no-repeat; 
-    background-position-x: center; 
-    background-position-y: center;
-  }
+.sidebar {
+  grid-area: sidebar;
+}
 
-  .productDiv  h4{
-    text-align: center;
-    font-weight: 900;
-  }
+.header {
+  grid-area: header;
+}
 
-  .productDiv p{
-
-    font-weight: 100;
-    font-family: Lato,sans-serif;
-    letter-spacing: .1em;
-    color:#333;
-  }
-  
+.store {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 10px 10px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . . ."
+    ". . . ."
+    ". . . .";
+  grid-area: store;
+}
 
 
-  *{
-    Font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;
-    box-sizing: border-box;
-  }
+.productDiv {
+  border: dashed red;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+}
+
+.productImageDiv {
+  width: 250px;
+  height: 250px;
+  border: dashed green;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+}
+
+.productOverlay h4 {
+  text-align: center;
+  font-weight: 900;
+}
+
+.productOverlay p {
+
+  font-weight: 100;
+  /*font-family: Lato,sans-serif;*/
+  letter-spacing: .1em;
+  color: #333;
+  text-align: center;
+}
+
+
+.productOverlay {
+  width: 250px;
+  height: 250px;
+  z-index: 1;
+  position: absolute;
+  opacity: 0;
+  transition: all 300ms ease-in-out;
+  -webkit-transition: all 300ms ease-in-out;
+  -moz-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  -ms-transition: all 300ms ease-in-out;
+}
+
+.productOverlay:hover{
+  opacity:0.7;
+  background-color: white;
+  height:250px;
+  width:250px;
+}
+
+
+
+* {
+  /* Font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;*/
+  font-family: 'Helvetica', sans-serif;
+  box-sizing: border-box;
+}
