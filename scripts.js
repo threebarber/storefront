@@ -88,6 +88,12 @@ const utils = (() => {
 
             prodOverlay.appendChild(prodPriceElem);
 
+            prodOverlay.onclick = function () {
+                utils.showModal(prod.id);
+
+            }
+
+
             prodImgDiv.appendChild(prodOverlay);
 
 
@@ -131,6 +137,18 @@ const utils = (() => {
         modalTextDescription.innerText = prod.description;
 
 
+        var modalCloseElement = document.createElement("span")
+        modalCloseElement.classList.add("close");
+        modalCloseElement.innerText = "X";
+
+
+        modalCloseElement.onclick = function () {
+            modal.style.display = "none";
+            modalDiv.innerHTML = '';
+
+        }
+
+
         modalTextDiv.appendChild(modalTextTitle);
         modalTextDiv.appendChild(modaltextPrice);
         modalTextDiv.appendChild(modalTextDescription);
@@ -139,6 +157,7 @@ const utils = (() => {
 
         modalDiv.appendChild(prodImgDiv);
         modalDiv.appendChild(modalTextDiv);
+        modalDiv.appendChild(modalCloseElement);
 
 
         modal.style.display = "flex";
