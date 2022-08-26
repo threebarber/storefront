@@ -22,7 +22,12 @@ const utils = (() => {
     const retrieveProducts = async function () {
 
         fetch('https://fakestoreapi.com/products', {
-            method: 'get'
+            method: 'get',
+            headers:{
+                'content-type' : 'application/json',
+                'accept':'application/json',
+            }
+            
         }).then(function (response) {
             return response.json();
         }).then(function (data) {
@@ -45,6 +50,7 @@ const utils = (() => {
 
             var prodDiv = document.createElement("div");
             prodDiv.classList.add("productDiv");
+            prodDiv.setAttribute("id",prod.id);
 
 
             var prodOverlay = document.createElement("div");
@@ -95,10 +101,51 @@ const utils = (() => {
         });
     }
 
+    const showModal = function(prodId){
+
+        const prod = productList.find(x => x.id == prodId);
+
+        utils.log(`Displaying modal for product ${prod.title} ID: ${prod.id}`);
+
+        var modal = document.querySelector(".modal");
+
+        var modalDiv = document.querySelector(".modalContentDiv");
+
+        var prodImgDiv = document.createElement("div");
+        prodImgDiv.classList.add("modalImageDiv");
+        prodImgDiv.style.backgroundImage = `url('${prod.image}')`
 
 
+
+        var modalTextDiv = document.createElement("div");
+        modalTextDiv.classList.add("modalTextDiv");
+
+        var modalTextTitle = document.createElement("h2");
+        modalTextTitle.innerText = prod.title;
+
+        var modaltextPrice = document.createElement("h4");
+        modaltextPrice.innerText = `$${prod.price}`
+
+
+        var modalTextDescription = document.createElement("h3");
+        modalTextDescription.innerText = prod.description;
+
+
+        modalTextDiv.appendChild(modalTextTitle);
+        modalTextDiv.appendChild(modaltextPrice);
+        modalTextDiv.appendChild(modalTextDescription);
+
+
+
+        modalDiv.appendChild(prodImgDiv);
+        modalDiv.appendChild(modalTextDiv);
+
+
+        modal.style.display = "flex";
+    }
 
     return {
+        showModal,
         displayProducts,
         log,
         retrieveProducts
