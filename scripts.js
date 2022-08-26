@@ -63,8 +63,8 @@ const utils = (() => {
             prodPriceElem.innerText = `$${prod.price}`
 
 
-            prodOverlay.appendChild(prodPriceElem);
             prodOverlay.appendChild(prodTitleElem);
+            prodOverlay.appendChild(prodPriceElem);
 
             prodImgDiv.appendChild(prodOverlay);
 
