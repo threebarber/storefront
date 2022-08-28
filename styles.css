@@ -351,6 +351,35 @@ input label:hover {
   background-color: #dfd;
 }
  
+.btn{
+  background:#000000;
+  font-family: 'Helvetica', sans-serif;
+  border: none;
+  color: #fcf5dc;
+  font-size: 19px;
+  line-height: 1.0;
+  font-weight: 400;
+  letter-spacing: 0em;
+  position: relative;
+  outline: none;
+  padding: 2px 31px 4px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 60px;
+  cursor: pointer;
+  transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  border-radius: 19px;
+}
+
+.btn i {
+  color: white;
+}
+
 
 * {
   /* Font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;*/

@@ -170,12 +170,17 @@ const utils = (() => {
         }
 
 
+        var modalAtcButton = document.createElement("button");
+        modalAtcButton.classList.add("btn");
+        
+        modalAtcButton.innerHTML = `<i style="padding-right:10px;" class="fas fa-shopping-cart"></i>ADD TO CART `;
+
         modalTextDiv.appendChild(modalCloseElement);
         modalTextDiv.appendChild(modalTextTitle);
         modalTextDiv.appendChild(modaltextPrice);
         modalTextDiv.appendChild(prodRatingDiv);
         modalTextDiv.appendChild(modalTextDescription);
-
+        modalTextDiv.appendChild(modalAtcButton);
 
 
         modalDiv.appendChild(prodImgDiv);
