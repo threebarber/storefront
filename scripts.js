@@ -7,7 +7,15 @@ const product = function (id, title, price, description, category, image, rating
 
     this.id = id;
     this.title = title;
-    this.price = price;
+    this.price = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+      
+        // These options are needed to round to whole numbers if that's what you want.
+        //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
+        //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
+      }).format(price);
+      
     this.description = description;
     this.category = category;
     this.image = image;
@@ -69,7 +77,7 @@ const utils = (() => {
 
 
             var prodPriceElem = document.createElement("p");
-            prodPriceElem.innerText = `$${prod.price}`
+            prodPriceElem.innerText = `${prod.price}`
 
 
             prodOverlay.appendChild(prodTitleElem);
@@ -132,7 +140,7 @@ const utils = (() => {
         modalTextTitle.innerText = prod.title;
 
         var modaltextPrice = document.createElement("h4");
-        modaltextPrice.innerText = `$${prod.price}`
+        modaltextPrice.innerText = `${prod.price}`
 
 
         var prodRatingDiv = document.createElement("div");
@@ -200,6 +208,8 @@ const utils = (() => {
 
 
     const clearFilters = function(){
+
+        document.querySelector("#clearButton").style.display = "none";
 
         document.querySelectorAll('input').forEach(item => {
             item.checked = false;
