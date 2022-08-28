@@ -44,6 +44,8 @@ const utils = (() => {
 
     const displayProducts = function (prodList) {
 
+        storeDiv.innerHTML = "";
+
         prodList.forEach(prod => {
 
             utils.log(`Displaying ${prod.title}`);
@@ -188,8 +190,24 @@ const utils = (() => {
                 utils.displayFilteredProducts(event.currentTarget.value);
             })
         })
+
+
+        document.querySelector("#clearButton").addEventListener('click', event => {          
+            utils.log("Clearing categories");
+            clearFilters();
+        })
     }
 
+
+    const clearFilters = function(){
+
+        document.querySelectorAll('input').forEach(item => {
+            item.checked = false;
+        })
+
+        displayProducts(productList);
+
+    }
 
     const filterProducts = function (category){
         
@@ -202,8 +220,6 @@ const utils = (() => {
 
     const displayFilteredProducts = function(category){
         
-        storeDiv.innerHTML = "";
-
         var filteredProducts = utils.filterProducts(category);
 
         utils.log(`${filteredProducts.length} matched filter for category: ${category}`);
@@ -214,6 +230,7 @@ const utils = (() => {
     }
 
     return {
+        clearFilters,
         displayFilteredProducts,
         filterProducts,
         addCategoryListeners,
