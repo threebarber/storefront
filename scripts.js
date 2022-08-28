@@ -184,6 +184,7 @@ const utils = (() => {
         document.querySelectorAll('input').forEach(item => {
             item.addEventListener('click', event => {
                 utils.log(`Clicked radio value: ${event.currentTarget.value}`)
+                document.querySelector("#clearButton").style.display = "block";
                 utils.displayFilteredProducts(event.currentTarget.value);
             })
         })

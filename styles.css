@@ -18,6 +18,15 @@
   grid-area: sidebar;
 }
 
+
+.sidebar button{
+  background: none;
+  border:none;
+  display:none;
+  cursor:pointer;
+  margin-left: 5px;
+}
+
 .header {
   grid-area: header;
 }
@@ -285,6 +294,7 @@
 .headerIconDiv {
   justify-content: space-evenly;
   display:flex;
+  align-items: center;
 
 }
 
