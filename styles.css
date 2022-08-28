@@ -157,6 +157,22 @@
 
 }
 
+.modalContentDiv h2{
+  font-size:30px;
+  font-weight: 500;
+  letter-spacing: .05px;
+  color:#191913;
+}
+
+
+.modalContentDiv h3{
+  font-family: 'Helvetica', sans-serif;
+  font-size:18px;
+  font-weight: 500;
+  line-height: 28px;
+  color:#191913;
+}
+
 @keyframes fadein {
   from {
     opacity: 0;
@@ -384,5 +400,6 @@ input label:hover {
 * {
   /* Font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;*/
   font-family: 'Helvetica', sans-serif;
+  color:#191913;
   box-sizing: border-box;
 }
