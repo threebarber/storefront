@@ -160,6 +160,7 @@ const utils = (() => {
         }
 
 
+        modalTextDiv.appendChild(modalCloseElement);
         modalTextDiv.appendChild(modalTextTitle);
         modalTextDiv.appendChild(modaltextPrice);
         modalTextDiv.appendChild(prodRatingDiv);
@@ -169,7 +170,9 @@ const utils = (() => {
 
         modalDiv.appendChild(prodImgDiv);
         modalDiv.appendChild(modalTextDiv);
-        modalDiv.appendChild(modalCloseElement);
+
+        
+        /*modalDiv.appendChild(modalCloseElement);*/
 
 
         modal.style.display = "flex";
