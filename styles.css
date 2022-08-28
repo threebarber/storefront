@@ -237,6 +237,11 @@
 }
 
 
+.headerContainer {
+  display:flex;
+  justify-content: space-between;
+}
+
 .headerMenuDiv{
   display:flex;
   justify-content: flex-start;
@@ -277,6 +282,41 @@
   transform-origin: bottom left;
 }
 
+.headerIconDiv {
+  justify-content: space-evenly;
+  display:flex;
+
+}
+
+.headerIconDiv i{
+  cursor:pointer;
+}
+
+
+.gg-search {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  transform: scale(var(--ggs,1));
+  width: 16px;
+  height: 16px;
+  border: 2px solid;
+  border-radius: 100%;
+ }
+ 
+ .gg-search::after {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  border-radius: 3px;
+  width: 2px;
+  height: 8px;
+  background: currentColor;
+  transform: rotate(-45deg);
+  top: 10px;
+  left: 12px
+ } 
 
 * {
   /* Font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;*/
