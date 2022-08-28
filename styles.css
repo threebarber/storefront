@@ -237,6 +237,47 @@
 }
 
 
+.headerMenuDiv{
+  display:flex;
+  justify-content: flex-start;
+  border:dashed yellow;
+}
+
+.headerMenuDiv{
+  display:flex;
+  justify-content: flex-start;
+  border:dashed yellow;
+  font-size: 18px;
+}
+
+.headerMenuItem {
+  display: inline-block;
+  position: relative;
+  color: black;
+  cursor:pointer;
+  padding:10px;
+  letter-spacing: .05em;
+}
+
+.headerMenuItem:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 5px;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.headerMenuItem:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+
 * {
   /* Font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;*/
   font-family: 'Helvetica', sans-serif;
