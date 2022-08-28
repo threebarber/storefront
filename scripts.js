@@ -23,11 +23,11 @@ const utils = (() => {
 
         fetch('https://fakestoreapi.com/products', {
             method: 'get',
-            headers:{
-                'content-type' : 'application/json',
-                'accept':'application/json',
+            headers: {
+                'content-type': 'application/json',
+                'accept': 'application/json',
             }
-            
+
         }).then(function (response) {
             return response.json();
         }).then(function (data) {
@@ -36,7 +36,7 @@ const utils = (() => {
                 productList.push(newProd);
                 utils.log(`Added product ${newProd.title} to list - current products ${productList.length}`);
             })
-        }).then(function() {
+        }).then(function () {
             utils.displayProducts(productList);
         });
 
@@ -50,7 +50,7 @@ const utils = (() => {
 
             var prodDiv = document.createElement("div");
             prodDiv.classList.add("productDiv");
-            prodDiv.setAttribute("id",prod.id);
+            prodDiv.setAttribute("id", prod.id);
 
 
             var prodOverlay = document.createElement("div");
@@ -79,9 +79,9 @@ const utils = (() => {
             let i = 0;
 
             while (i <= prod.rating) {
-                prodRatingDiv.innerHTML+=(`<span class="fa fa-star"></span>`)
+                prodRatingDiv.innerHTML += (`<span class="fa fa-star"></span>`)
                 i++;
-              }
+            }
 
 
             prodOverlay.appendChild(prodRatingDiv);
@@ -100,14 +100,14 @@ const utils = (() => {
             /*prodImgDiv.appendChild(prodImgElement);*/
 
             prodDiv.appendChild(prodImgDiv);
-            
+
             storeDiv.appendChild(prodDiv)
 
 
         });
     }
 
-    const showModal = function(prodId){
+    const showModal = function (prodId) {
 
         const prod = productList.find(x => x.id == prodId);
 
@@ -134,14 +134,14 @@ const utils = (() => {
 
 
         var prodRatingDiv = document.createElement("div");
-            prodRatingDiv.classList.add("productRatingDiv")
+        prodRatingDiv.classList.add("productRatingDiv")
 
-            let i = 0;
+        let i = 0;
 
-            while (i <= prod.rating) {
-                prodRatingDiv.innerHTML+=(`<span class="fa fa-star"></span>`)
-                i++;
-              }
+        while (i <= prod.rating) {
+            prodRatingDiv.innerHTML += (`<span class="fa fa-star"></span>`)
+            i++;
+        }
 
 
         var modalTextDescription = document.createElement("h3");
@@ -171,14 +171,51 @@ const utils = (() => {
         modalDiv.appendChild(prodImgDiv);
         modalDiv.appendChild(modalTextDiv);
 
-        
+
         /*modalDiv.appendChild(modalCloseElement);*/
 
 
         modal.style.display = "flex";
     }
 
+
+    const addCategoryListeners = function () {
+
+        document.querySelectorAll('input').forEach(item => {
+            item.addEventListener('click', event => {
+                utils.log(`Clicked radio value: ${event.currentTarget.value}`)
+                utils.displayFilteredProducts(event.currentTarget.value);
+            })
+        })
+    }
+
+
+    const filterProducts = function (category){
+        
+        var filteredProducts = productList.filter(function (prod) {
+            return prod.category == category;
+          });
+
+        return filteredProducts;
+    }
+
+    const displayFilteredProducts = function(category){
+        
+        storeDiv.innerHTML = "";
+
+        var filteredProducts = utils.filterProducts(category);
+
+        utils.log(`${filteredProducts.length} matched filter for category: ${category}`);
+
+
+        displayProducts(filteredProducts);
+
+    }
+
     return {
+        displayFilteredProducts,
+        filterProducts,
+        addCategoryListeners,
         showModal,
         displayProducts,
         log,
@@ -188,8 +225,9 @@ const utils = (() => {
 })();
 
 
-utils.retrieveProducts();
 
+utils.retrieveProducts();
+utils.addCategoryListeners();
 
 /*const loopTime = 10;
 
