@@ -356,6 +356,7 @@ label {
   font-family: sans-serif, Arial;
   font-size: 16px;
   border-radius: 4px;
+  cursor:pointer;
 }
 
 input[type="radio"]:checked + label {
