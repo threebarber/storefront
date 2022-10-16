@@ -11,7 +11,7 @@
   margin-left: 70px;
   margin-right: 70px;
 
-  border: dashed black;
+ /* border: dashed black;*/
 }
 
 .sidebar {
@@ -46,7 +46,7 @@
 
 
 .productDiv {
-  border: dashed red;
+  /*border: dashed red;*/
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -57,7 +57,7 @@
 .productImageDiv {
   width: 250px;
   height: 250px;
-  border: dashed green;
+  /*border: dashed green;*/
   background-size: contain;
   background-repeat: no-repeat;
   background-position-x: center;
@@ -230,7 +230,7 @@
 .modalImageDiv {
   width: 430px;
   height: 430px;
-  border: dashed purple;
+  /*border: dashed purple;*/
   background-size: contain;
   background-repeat: no-repeat;
   background-position-x: center;
@@ -243,7 +243,7 @@
   flex-direction: column;
   align-items: center;
   padding-left: 40px;
-  border: dashed blue;
+  /*border: dashed blue;*/
   width: 500px;
 }
 
@@ -270,13 +270,13 @@
 .headerMenuDiv{
   display:flex;
   justify-content: flex-start;
-  border:dashed yellow;
+  /*border:dashed yellow;*/
 }
 
 .headerMenuDiv{
   display:flex;
   justify-content: flex-start;
-  border:dashed yellow;
+  /*border:dashed yellow;*/
   font-size: 18px;
 }
 
@@ -316,33 +316,9 @@
 
 .headerIconDiv i{
   cursor:pointer;
+  font-size: 30px;
 }
 
-
-.gg-search {
-  box-sizing: border-box;
-  position: relative;
-  display: block;
-  transform: scale(var(--ggs,1));
-  width: 16px;
-  height: 16px;
-  border: 2px solid;
-  border-radius: 100%;
- }
- 
- .gg-search::after {
-  content: "";
-  display: block;
-  box-sizing: border-box;
-  position: absolute;
-  border-radius: 3px;
-  width: 2px;
-  height: 8px;
-  background: currentColor;
-  transform: rotate(-45deg);
-  top: 10px;
-  left: 12px
- } 
 
  input[type="radio"] {
   opacity: 0;
